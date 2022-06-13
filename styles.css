@@ -6,26 +6,28 @@
     border-color: black;
     border: 10px;
     
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 400px;
+    max-height: 800px;
     margin: 10vh auto 0 auto;
     box-shadow: 0px 0px 43px 17px rgba(153,153,153,1);
 }
 
 .display{
-    height: 70px;
+    height: 100px;
     line-height: 70px;
     padding: 16px 8px;
     font-size: 25px;
 }
 
 .buttons {
-    
+    padding: 5px;
     display: flex;
     border-bottom: 1px solid #999;
     border-left: 1px solid#999;
     flex-direction: column;
 }
+
+
 .operations {
     width: 100%;
     display: flex;
@@ -86,4 +88,12 @@
 .clear-equal > button {
     width: 50%;
 }
+.equal{
+    background-color: rgb(255, 0, 0);
+}
+
+.clear{
+    background-color: rgba(255, 106, 0, 0.905);
+}
+
 
