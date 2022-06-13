@@ -40,7 +40,7 @@ const solve = (n1, operator, n2) => {
     if (operator === 'add') return a + b;
     if (operator === 'subtract') return a - b;
     if (operator === 'multiply') return a * b;
-    if (operator === 'divide') return b==0?'Infinite':(a / b).toFixed(2);
+    if (operator === 'divide') return b==0?'Infinite':a / b;
 }
 
 
