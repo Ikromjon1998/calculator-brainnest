@@ -102,7 +102,7 @@ const readyResult = (key, numInDisplay, state) => {
 // 
 const updateCalculator = (key, calculator, calculatedValue, numInDisplay) => {
     const keyType = getKeyType(key)
-    const { firstVal, operator, modVal, previousKeyType} = calculator.dataset
+    const { firstVal, operator, modVal, previousKeyType} = calculator.dataset;
   
     calculator.dataset.previousKeyType = keyType;
   
@@ -127,10 +127,10 @@ const updateCalculator = (key, calculator, calculatedValue, numInDisplay) => {
   
 const updateVisualState = (key, calculator) => {
     const keyType = getKeyType(key)
-    Array.from(key.parentNode.children).forEach(k => k.classList.remove('is-depressed'));
+    Array.from(key.parentNode.children).forEach(n => n.classList.remove('is-depressed'));
     // operator is not dublikated with is-depressed
-    if (keyType === 'operator') key.classList.add('is-depressed')
-    if (keyType === 'clear' && key.textContent !== 'AC') key.textContent = 'AC'
+    if (keyType === 'operator') key.classList.add('is-depressed');
+    if (keyType === 'clear' && key.textContent !== 'AC') key.textContent = 'AC';
     if (keyType !== 'clear') {
       const clearButton = calculator.querySelector('[data-action=clear]')
       clearButton.textContent = 'CE';//<>
@@ -145,8 +145,7 @@ keys.addEventListener('click', e => {
     if (!e.target.matches('button')) return
     const key = e.target
     const numInDisplay= display.textContent;
-    const resultString = readyResult
-(key, numInDisplay, calculator.dataset);
+    const resultString = readyResult(key, numInDisplay, calculator.dataset);
   
     display.textContent = resultString
     updateCalculator(key, calculator, resultString, numInDisplay)

@@ -21,45 +21,11 @@ const getKeyType = key => {
     return action;
 }
 const readyResult = (key, numInDisplay, state) => {
-    const keyContent = key.textContent;// take text content from key
-    const keyType = getKeyType(key)// define type of action button, if not 
-    const {
-      firstVal,
-      operator,
-      modVal,
-      previousKeyType
-    } = state // object state 
-  
-    // return clicked button content 
-    if (keyType === 'number') {
-      return numInDisplay
-       === '0' ||
-        previousKeyType === 'operator' ||
-        previousKeyType === 'solve' ? keyContent : numInDisplay
-         + keyContent;
-    }
-  
-    if (keyType === 'decimal') {
-      if (!numInDisplay.includes('.')) return numInDisplay + '.';
-      if (previousKeyType === 'operator' || previousKeyType === 'solve') return '0.';
-      return numInDisplay;
-    }
-  
-    if (keyType === 'operator') {
-      return firstVal &&
-        operator &&
-        previousKeyType !== 'operator' &&
-        previousKeyType !== 'solve'
-        ? solve(firstVal, operator, numInDisplay): numInDisplay;
+    const keyType = getKeyType(key);
+    let dispNum = numInDisplay; 
 
-    }
-  
-    if (keyType === 'clear') return 0
-  
-    if (keyType === 'solve') {
-      return firstVal ? previousKeyType === 'solve'? 
-                solve(numInDisplay, operator, modVal) : solve(firstVal, operator, numInDisplay): numInDisplay
-
+    if (numInDisplay === '' ){
+        
     }
 }
 
