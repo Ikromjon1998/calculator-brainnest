@@ -83,7 +83,8 @@ const readyResult = (key, numInDisplay, state) => {
     }
     // by operator shows results on display
     if (keyType === 'operator') {
-      return firstVal &&
+        
+        return firstVal &&
         operator &&
         previousKeyType !== 'operator' &&
         previousKeyType !== 'solve'
@@ -92,11 +93,11 @@ const readyResult = (key, numInDisplay, state) => {
     }
     // void
     if (keyType === 'clear') return 0;
-  
+    
     if (keyType === 'solve') {
-      return firstVal ? previousKeyType === 'solve'? 
+        let res = firstVal ? previousKeyType === 'solve'? 
                 solve(numInDisplay, operator, modVal) : solve(firstVal, operator, numInDisplay): numInDisplay;
-
+        return res.toFixed(2);
     }
 }
 // 
