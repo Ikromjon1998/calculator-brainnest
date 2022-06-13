@@ -22,13 +22,14 @@ const readyResult = (key) => {
 
 const calculator = document.querySelector('.container');
 const display = calculator.querySelector('.display');
-const keys = calculator.querySelector('.buttons');
-  
-keys.addEventListener('click', e => {
-    if (!e.target.matches('button')) return
-    const key = e.target
-    
+const bu = calculator.querySelector('.buttons');
+const operations = [];
 
+
+keys.addEventListener('click', e => {
+    if (!e.target.matches('button')) return;
+    const key = e.target;
+    
     readyResult(key);
     
 })
