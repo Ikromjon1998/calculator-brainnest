@@ -139,9 +139,9 @@ const updateVisualState = (key, calculator) => {
   
 const calculator = document.querySelector('.container');
 const display = calculator.querySelector('.display');
-const keys = calculator.querySelector('.buttons');
+const buttons = calculator.querySelector('.buttons');
   
-keys.addEventListener('click', e => {
+buttons.addEventListener('click', e => {
     if (!e.target.matches('button')) return
     const key = e.target
     const numInDisplay= display.textContent;
